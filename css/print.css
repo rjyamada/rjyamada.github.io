@@ -15,7 +15,7 @@ a[href]:after {
   margin-bottom:-10px;
 }
 
-blockquote,#education,#awards,.contact-item,.publication,.skills,.interests,.job-details,.job {
+blockquote,#education,#awards,.contact-item,.publication,.skills,.interests,.job-details {
   page-break-inside:avoid;
 }
 
