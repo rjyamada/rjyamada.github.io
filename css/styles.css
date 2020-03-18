@@ -202,6 +202,7 @@ blockquote footer{
 .job .highlights {
   font-weight: 700;
   padding: 5px 0;
+  text-decoration: underline;
 }
 
 .job .job-details {
