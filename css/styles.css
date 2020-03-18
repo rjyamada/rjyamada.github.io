@@ -208,7 +208,7 @@ blockquote footer{
 }
 
 .job .list-group {
-  padding-top: 10px;
+  margin: 10px 0;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
