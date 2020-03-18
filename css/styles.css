@@ -204,10 +204,12 @@ blockquote footer{
   font-weight: 700;
   padding: 5px 0;
   text-decoration: underline;
+  transition: 0.4s;
 }
 
 .job .list-group {
   display: none;
+  transition: max-height 0.2s ease-out;
 }
 
 .job .job-details {
