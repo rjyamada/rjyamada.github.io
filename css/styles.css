@@ -204,6 +204,9 @@ blockquote footer{
   padding: 5px 0;
   text-decoration: underline;
 }
+.job .list-group {
+  display: none;
+}
 
 .job .job-details {
   padding-left: 5%;
