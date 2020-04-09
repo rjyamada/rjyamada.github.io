@@ -15,12 +15,6 @@ a[href]:after {
   margin-bottom:-10px;
 }
 
-/*
-blockquote,#education,#awards,.contact-item,.publication,.skills,.interests,.job-details {
-  page-break-inside:avoid;
-}
-*/
-
 .col-sm-5 {
   padding:0 15px;
   width:40%;
