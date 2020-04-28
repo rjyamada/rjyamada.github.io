@@ -8,9 +8,6 @@ a[href]:after {
 blockquote {
   border: 0; }
 
-#photo {
-  display: none; }
-
 .box {
   margin-bottom: -10px; }
 
@@ -33,7 +30,7 @@ blockquote {
 .job .highlights {
   color: #334960; }
 
-.job .list-group {
+.list-group {
   list-style-type: disc;
   max-height: none;
   overflow: auto;
