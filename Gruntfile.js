@@ -15,8 +15,14 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            files: 'src/scss/*.scss',
-            tasks: ['sass']
+            css: {
+                files: 'src/scss/*.scss',
+                tasks: ['sass']
+            },
+            image: {
+                files: 'src/img/*.{png,jpg,gif}',
+                tasks: ['imagemin','cwebp']
+            }
         },
         browserSync: {
             dev: {
@@ -58,7 +64,7 @@ module.exports = function (grunt) {
         },
         clean: {
             build: {
-                src: ['css/','img/','fonts/','js/','*.html', 'src/css']
+                src: ['css/', 'img/', 'fonts/', 'js/', '*.html', 'src/css']
             }
         },
         imagemin: {
@@ -67,6 +73,19 @@ module.exports = function (grunt) {
                     expand: true,
                     dot: true,
                     cwd: 'src/',
+                    src: ['img/*.{png,jpg,gif}'],
+                    dest: './'
+                }]
+            }
+        },
+        cwebp: {
+            dynamic: {
+                options: {
+                    q: 90
+                },
+                files: [{
+                    expand: true,
+                    cwd: './',
                     src: ['img/*.{png,jpg,gif}'],
                     dest: './'
                 }]
@@ -162,7 +181,7 @@ module.exports = function (grunt) {
         }
     });
     grunt.registerTask('css', ['sass']);
-    grunt.registerTask('default', ['browserSync', 'sass', 'watch']);
-    grunt.registerTask('build', ['clean', 'sass', 'copy', 'imagemin', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin']);
+    grunt.registerTask('default', ['browserSync', 'sass', 'imagemin','cwebp', 'watch']);
+    grunt.registerTask('build', ['clean', 'sass', 'copy', 'imagemin', 'cwebp', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin']);
 
 }
