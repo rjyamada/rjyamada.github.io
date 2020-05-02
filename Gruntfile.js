@@ -134,6 +134,14 @@ module.exports = function (grunt) {
             dist: {}
         },
 
+        uncss: {
+            dist: {
+                files: {
+                    'css/main.css': ['index.html']
+                }
+            }
+        },
+
         cssmin: {
             css: {}
         },
@@ -182,6 +190,6 @@ module.exports = function (grunt) {
     });
     grunt.registerTask('css', ['sass']);
     grunt.registerTask('default', ['browserSync', 'sass', 'imagemin','cwebp', 'watch']);
-    grunt.registerTask('build', ['clean', 'sass', 'copy', 'imagemin', 'cwebp', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin']);
+    grunt.registerTask('build', ['clean', 'sass', 'copy', 'imagemin', 'cwebp', 'useminPrepare', 'concat', 'cssmin', 'uncss', 'uglify', 'filerev', 'usemin', 'htmlmin']);
 
 }
