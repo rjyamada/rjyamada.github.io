@@ -20,7 +20,7 @@ module.exports = function (grunt) {
                 tasks: ['sass']
             },
             image: {
-                files: 'src/img/*.{png,jpg,gif}',
+                files: 'src/img/*.{png,jpg,gif,ico}',
                 tasks: ['imagemin','cwebp']
             }
         },
@@ -64,7 +64,7 @@ module.exports = function (grunt) {
         },
         clean: {
             build: {
-                src: ['css/', 'img/', 'fonts/', 'js/', '*.html', 'src/css']
+                src: ['css/', 'img/', 'fonts/', 'js/', '*.html', 'sw.js','src/css']
             }
         },
         imagemin: {
@@ -73,7 +73,7 @@ module.exports = function (grunt) {
                     expand: true,
                     dot: true,
                     cwd: 'src/',
-                    src: ['img/*.{png,jpg,gif}'],
+                    src: ['img/*.{png,jpg,gif,ico}'],
                     dest: './'
                 }]
             }
@@ -131,7 +131,12 @@ module.exports = function (grunt) {
         // Uglify
         uglify: {
             // dist configuration is provided by useminPrepare
-            dist: {}
+            dist: {},
+            sw:{
+                files: {
+                    'sw.js': ['src/js/sw.js']
+                  }
+            }
         },
 
         uncss: {
@@ -159,8 +164,9 @@ module.exports = function (grunt) {
                 // in dist directory
                 files: [{
                     src: [
-                        'js/*.js',
-                        'css/*.css',
+                        'js/main.js',
+                        'css/main.css',
+                        'css/print.css',
                     ]
                 }]
             }
@@ -172,8 +178,14 @@ module.exports = function (grunt) {
         // according to their relative paths
         usemin: {
             html: ['index.html'],
+            js: 'sw.js',
             options: {
-                assetsDirs: ['./', 'css', 'js']
+                assetsDirs: ['./', 'css', 'js'],
+                patterns: {
+                    js: [
+                      [/(main\.js)/], [/(main\.css)/], [/(print\.css)/]
+                    ]
+                  }
             }
         },
 

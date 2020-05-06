@@ -7,6 +7,8 @@
     <meta name="description" content="Ray Yamada's Personal Website">
     <meta name="author" content="Ray Yamada">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#227c74"/>
+
 
     <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -17,8 +19,11 @@
     <link rel="stylesheet" href="src/css/print.css" media="print">
     <!-- endbuild -->
 
-    <link id="favicon" rel="icon" type="image/x-icon"
-      href="data:image/png;base64,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">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+    <link rel="manifest" href="manifest.json">
   </head>
 
   <body>
@@ -198,7 +203,8 @@
             <div class="job">
               <div class="details row">
                 <h3>Groupon - Palo Alto, CA</h3>
-                <a href="https://www.groupon.com" target="_blank" rel="noopener"><i class="fa fa-globe ico"></i>www.groupon.com</a>
+                <a href="https://www.groupon.com" target="_blank" rel="noopener"><i
+                    class="fa fa-globe ico"></i>www.groupon.com</a>
                 <p>
                   Groupon is an American worldwide e-commerce marketplace connecting subscribers with local merchants
                   by
@@ -366,7 +372,8 @@
             <div class="job">
               <div class="details row">
                 <h3>Chevron Corporation - Bakersfield, CA</h3>
-                <a href="https://www.chevron.com" target="_blank" rel="noopener"><i class="fa fa-globe ico"></i>www.chevron.com</a>
+                <a href="https://www.chevron.com" target="_blank" rel="noopener"><i
+                    class="fa fa-globe ico"></i>www.chevron.com</a>
                 <p>
                   Chevron works to meet the world's growing demand for energy by exploring for oil and natural gas;
                   refining and marketing gasoline; producing chemicals and more.
@@ -431,7 +438,8 @@
                   and admiration.</p>
               </div>
               <footer class="blockquote-footer float-right">
-                <a href="https://www.linkedin.com/in/adrianiskandar/" target="_blank" rel="noopener">Adrian Iskandar Espinosa
+                <a href="https://www.linkedin.com/in/adrianiskandar/" target="_blank" rel="noopener">Adrian Iskandar
+                  Espinosa
                   Caballero</a>
               </footer>
             </blockquote>
@@ -447,7 +455,8 @@
                   empathize and relate to a problem. It has been a great experience learning from him</p>
               </div>
               <footer class="blockquote-footer float-right">
-                <a href="https://www.linkedin.com/in/priyankasingh059/" target="_blank" rel="noopener">Priyanka Singh</a>
+                <a href="https://www.linkedin.com/in/priyankasingh059/" target="_blank" rel="noopener">Priyanka
+                  Singh</a>
               </footer>
             </blockquote>
             <blockquote class="col-12">
@@ -536,7 +545,8 @@
                   and give good recommendations and advice during the stands and meetings.</p>
               </div>
               <footer class="blockquote-footer float-right">
-                <a href="https://www.linkedin.com/in/yuetong-zhao-3607ab79/" target="_blank" rel="noopener">Yuetong Zhao</a>
+                <a href="https://www.linkedin.com/in/yuetong-zhao-3607ab79/" target="_blank" rel="noopener">Yuetong
+                  Zhao</a>
               </footer>
             </blockquote>
             <blockquote class="col-12">
@@ -568,7 +578,8 @@
                   I sincerely hope I get to.</p>
               </div>
               <footer class="blockquote-footer float-right">
-                <a href="https://www.linkedin.com/in/adam-medeiros-54443b6/" target="_blank" rel="noopener">Adam Medeiros</a>
+                <a href="https://www.linkedin.com/in/adam-medeiros-54443b6/" target="_blank" rel="noopener">Adam
+                  Medeiros</a>
               </footer>
             </blockquote>
             <blockquote class="col-12">
@@ -588,7 +599,8 @@
                   orientation.</p>
               </div>
               <footer class="blockquote-footer float-right">
-                <a href="https://www.linkedin.com/in/millietadewaldt/" target="_blank" rel="noopener">Millie Tadewaldt</a>
+                <a href="https://www.linkedin.com/in/millietadewaldt/" target="_blank" rel="noopener">Millie
+                  Tadewaldt</a>
               </footer>
             </blockquote>
             <blockquote class="col-12">
@@ -627,7 +639,8 @@
     </div>
 
     <!-- build:js js/main.js -->
-    <script src="src/js/scripts.js"></script>
+    <script src="src/js/app.js"></script>
+    <script src="src/js/accordion.js"></script>
     <!-- endbuild -->
 
   </body>
